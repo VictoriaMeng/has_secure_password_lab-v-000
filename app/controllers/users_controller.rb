@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def create
     user = User.new(user_params).save
+    binding.pry
     session[:user_id] = user.id
     redirect_to user_path(user)
   end
